@@ -1,3 +1,0 @@
-[submodule "eks-demo-app"]
-	path = eks-demo-app
-	url = https://github.com/enschede/eks-demo-app.git
