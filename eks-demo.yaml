@@ -3,7 +3,6 @@ kind: ClusterConfig
 metadata:
   name: eks-demo
   region: us-west-2
-  version: "1.22"
 
 managedNodeGroups:
   - name: prod
@@ -12,57 +11,8 @@ managedNodeGroups:
     minSize: 1
     maxSize: 6
     spot: true
+    ssh:
+      allow: true
     iam:
       withAddonPolicies:
-        imageBuilder: false
-        autoScaler: false
-        externalDNS: false
-        certManager: false
-        appMesh: false
-        appMeshPreview: false
-        ebs: false
-        fsx: false
-        efs: false
-        albIngress: false
-        xRay: false
         cloudWatch: true
-    tags:
-      k8s.io/cluster-autoscaler/eks-demo: owned
-      k8s.io/cluster-autoscaler/enabled: "true"
-    labels: { env: "prod" }
-  - name: dev
-    instanceType: t3.medium
-    desiredCapacity: 1
-    minSize: 1
-    maxSize: 6
-    spot: true
-    iam:
-      withAddonPolicies:
-        imageBuilder: false
-        autoScaler: false
-        externalDNS: false
-        certManager: false
-        appMesh: false
-        appMeshPreview: false
-        ebs: false
-        fsx: false
-        efs: false
-        albIngress: false
-        xRay: false
-        cloudWatch: true
-    tags:
-      k8s.io/cluster-autoscaler/eks-demo: owned
-      k8s.io/cluster-autoscaler/enabled: "true"
-    labels: { env: "dev" }
-
-fargateProfiles:
-  - name: fp-dev
-    selectors:
-      - namespace: dev
-        labels:
-          env: build
-
-cloudWatch:
-  clusterLogging:
-    enableTypes: [ "api", "audit", "authenticator", "controllerManager", "scheduler" ]
-    logRetentionInDays: 1
