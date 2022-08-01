@@ -10,3 +10,7 @@ helm install aws-load-balancer-controller \
   --set clusterName=eks-demo \
   --set serviceAccount.create=false \
   --set serviceAccount.name=aws-load-balancer-controller
+
+kubectl apply -f eks-demo-app/deployment/service.yaml
+kubectl apply -f eks-demo-app/deployment/deployment.yaml
+kubectl apply -f eks-demo-app/deployment/ingress.yaml
