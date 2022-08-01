@@ -4,6 +4,15 @@ metadata:
   name: eks-demo
   region: us-west-2
 
+iam:
+  withOIDC: true
+  serviceAccounts:
+    - metadata:
+        name: aws-load-balancer-controller
+        namespace: kube-system
+      wellKnownPolicies:
+        awsLoadBalancerController: true
+
 managedNodeGroups:
   - name: prod
     instanceType: t3.medium
@@ -11,8 +20,6 @@ managedNodeGroups:
     minSize: 1
     maxSize: 6
     spot: true
-    ssh:
-      allow: true
     iam:
       withAddonPolicies:
         cloudWatch: true
