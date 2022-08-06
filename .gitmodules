@@ -1,3 +1,6 @@
 [submodule "eks-demo-app"]
 	path = eks-demo-app
 	url = https://github.com/enschede/eks-demo-app.git
+[submodule "eks-demo-infra"]
+	path = eks-demo-infra
+	url = https://github.com/enschede/eks-demo-infra.git

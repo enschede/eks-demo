@@ -23,3 +23,14 @@ managedNodeGroups:
     iam:
       withAddonPolicies:
         cloudWatch: true
+
+gitops:
+  flux:
+    gitProvider: github
+    flags:
+      owner: "enschede"
+      repository: "eks-demo-infra"
+      private: "true"
+      branch: "main"
+      namespace: "flux-system"
+      path: "app-cluster"
