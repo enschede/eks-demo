@@ -12,6 +12,11 @@ iam:
         namespace: kube-system
       wellKnownPolicies:
         awsLoadBalancerController: true
+    - metadata:
+        name: bitnami-external-dns-controller
+        namespace: bitnami-external-dns
+      wellKnownPolicies:
+        externalDNS: true
 
 managedNodeGroups:
   - name: prod

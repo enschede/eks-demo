@@ -4,3 +4,9 @@
 [submodule "eks-demo-infra"]
 	path = eks-demo-infra
 	url = https://github.com/enschede/eks-demo-infra.git
+[submodule "eks-demo-load-balancer-controller"]
+	path = eks-demo-load-balancer-controller
+	url = https://github.com/enschede/eks-demo-load-balancer-controller.git
+[submodule "eks-demo-bitnami-external-dns"]
+	path = eks-demo-bitnami-external-dns
+	url = https://github.com/enschede/eks-demo-bitnami-external-dns.git
